@@ -1,16 +1,21 @@
 import { generateMutationOp } from '../../../generated';
-import { InputData } from '../../lib/services/talons/useCreateAccount';
+import { InputDataCreateAccount } from '../../lib/services/talons/useCreateAccount';
+import { InputDataSignIn } from '../../lib/services/talons/useSignIn';
 
-interface createCustomerData {
-  data: InputData;
+interface CreateCustomerData {
+  data: InputDataCreateAccount;
 }
 
-export const createCustomerGQL = ({ data }: createCustomerData) =>
+interface SignInData {
+  data: InputDataSignIn;
+}
+
+export const createCustomerGQL = ({ data }: CreateCustomerData) =>
   generateMutationOp({
     createCustomer: [{ data }, { customer: { id: true, email: true, firstname: true } }]
   });
 
-// export const signInCustomerGQL = ({ data }) =>
-//   generateMutationOp({
-//     signInCustomer: [{ data }, { token: true }]
-//   });
+export const signInCustomerGQL = ({ data }: SignInData) =>
+  generateMutationOp({
+    signInCustomer: [{ data }, { token: true }]
+  });
