@@ -7,7 +7,7 @@ interface ActivePwdIcon {
   password_confirm?: boolean;
 }
 
-interface InputData {
+export interface InputData {
   firstname: string;
   lastname: string;
   gender: number;
