@@ -1,6 +1,6 @@
 import { useState, useCallback, ChangeEvent, SyntheticEvent } from 'react';
 import { useMutation, gql } from '@apollo/client';
-// import { signInCustomerGQL } from '../../../gql/customer';
+import { signInCustomerGQL } from '../../../gql/customer';
 
 interface ActivePwdIcon {
   password: boolean;
@@ -16,9 +16,9 @@ const useSignIn = () => {
   const [inputData, setInputData] = useState<InputDataSignIn>(initialData);
   const [activePwdIcon, setActivePwdIcon] = useState<ActivePwdIcon>({ password: false });
 
-  // const { query, variables } = signInCustomerGQL({ data: inputData });
+  const { query, variables } = signInCustomerGQL({ data: inputData });
 
-  // const [signInCustomer] = useMutation(gql(query));
+  const [signInCustomer] = useMutation(gql(query));
 
   const handleChange = useCallback(
     ({ target: { value, name } }: ChangeEvent<HTMLInputElement>) => {
@@ -38,8 +38,8 @@ const useSignIn = () => {
     e.preventDefault();
 
     try {
-      // const response = await signInCustomer({ variables });
-      // console.log('response', response);
+      const response = await signInCustomer({ variables });
+      console.log('response', response);
     } catch (error) {
       console.log(`Unexpect Error on Mutation ${error}`);
     }

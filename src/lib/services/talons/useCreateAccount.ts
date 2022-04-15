@@ -1,6 +1,6 @@
 import { ChangeEvent, SyntheticEvent, useCallback, useState } from 'react';
-// import { useMutation, gql } from '@apollo/client';
-// import { createCustomerGQL } from '../../../gql/customer';
+import { useMutation, gql } from '@apollo/client';
+import { createCustomerGQL } from '../../../gql/customer';
 
 interface ActivePwdIcon {
   password?: boolean;
@@ -44,9 +44,9 @@ const useCreateAccount = () => {
   const initialPwd = { password: false, password_confirm: false };
   const [activePwdIcon, setActivePwdIcon] = useState<ActivePwdIcon>(initialPwd);
 
-  // const { query, variables } = createCustomerGQL({ data: inputData });
+  const { query, variables } = createCustomerGQL({ data: inputData });
 
-  // const [createCustomer] = useMutation(gql(query));
+  const [createCustomer] = useMutation(gql(query));
 
   const handleChange = useCallback(
     ({ target: { value, name } }: ChangeEvent<HTMLInputElement>) => {
@@ -80,8 +80,8 @@ const useCreateAccount = () => {
     delete inputData.password_confirm;
 
     try {
-      // const response = await createCustomer({ variables });
-      // console.log('response', response);
+      const response = await createCustomer({ variables });
+      console.log('response', response);
     } catch (error) {
       console.log(`Unexpect Error on Mutation ${error}`);
     }
