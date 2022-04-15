@@ -30,12 +30,12 @@
 }
 
 .dropCountryItems {
-  composes: items from '@goshirts-react/lib/components/Dropdown/dropdown.module.css';
+  composes: items from '@goshirts-react/lib/src/components/Dropdown/dropdown.module.css';
   width: 99%;
 }
 
 .dropCountryItemsActive {
-  composes: itemsActive from '@goshirts-react/lib/components/Dropdown/dropdown.module.css';
+  composes: itemsActive from '@goshirts-react/lib/src/components/Dropdown/dropdown.module.css';
   height: 305%;
 }
 
@@ -47,27 +47,27 @@
 }
 
 .checkNewsletter {
-  composes: root from '@goshirts-react/lib/components/InputText/inputText.module.css';
+  composes: root from '@goshirts-react/lib/src/components/InputText/inputText.module.css';
   grid-template-columns: 20px 1fr;
 }
 
 .checkNewsletterLabel {
-  composes: label from '@goshirts-react/lib/components/InputText/inputText.module.css';
+  composes: label from '@goshirts-react/lib/src/components/InputText/inputText.module.css';
   order: 1;
 }
 
 .checkNewsletterInput {
-  composes: input from '@goshirts-react/lib/components/InputText/inputText.module.css';
+  composes: input from '@goshirts-react/lib/src/components/InputText/inputText.module.css';
   order: 0;
 }
 
 .checkNewsletterTextVisible {
-  composes: textVisible from '@goshirts-react/lib/components/InputText/inputText.module.css';
+  composes: textVisible from '@goshirts-react/lib/src/components/InputText/inputText.module.css';
   order: 2;
 }
 
 .checkNewsletterTextInvisible {
-  composes: textInvisible from '@goshirts-react/lib/components/InputText/inputText.module.css';
+  composes: textInvisible from '@goshirts-react/lib/src/components/InputText/inputText.module.css';
   order: 3;
 }
 
@@ -114,7 +114,7 @@
 }
 
 .buttonSubmit {
-  composes: button from '@goshirts-react/lib/components/Button/button.module.css';
+  composes: button from '@goshirts-react/lib/src/components/Button/button.module.css';
   font-size: 0.8rem;
   text-transform: uppercase;
   width: 100%;
