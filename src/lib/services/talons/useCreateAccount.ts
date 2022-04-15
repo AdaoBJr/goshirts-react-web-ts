@@ -7,7 +7,7 @@ interface ActivePwdIcon {
   password_confirm?: boolean;
 }
 
-export interface InputData {
+export interface InputDataCreateAccount {
   firstname: string;
   lastname: string;
   gender: number;
@@ -40,7 +40,7 @@ const useCreateAccount = () => {
     password: '',
     password_confirm: ''
   };
-  const [inputData, setInputData] = useState<InputData>(initialData);
+  const [inputData, setInputData] = useState<InputDataCreateAccount>(initialData);
   const initialPwd = { password: false, password_confirm: false };
   const [activePwdIcon, setActivePwdIcon] = useState<ActivePwdIcon>(initialPwd);
 
