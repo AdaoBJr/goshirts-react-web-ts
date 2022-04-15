@@ -1,11 +1,5 @@
-import CreateAccount from './lib/pages/CreateAccount';
+import { Routes } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <CreateAccount />
-    </div>
-  );
-}
+const App: React.FC = () => <Routes />;
 
 export default App;
